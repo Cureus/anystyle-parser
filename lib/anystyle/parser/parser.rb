@@ -18,7 +18,7 @@ module Anystyle
         :training_data => File.expand_path('../../../../resources/train.txt', __FILE__)
       }.freeze
 
-      @defaults[:training_data].untaint
+      @defaults[:training_data]
 
       @features = Feature.instances
       @feature = Hash.new { |h,k| h[k.to_sym] = features.detect { |f| f.name == k.to_sym } }
